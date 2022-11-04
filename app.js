@@ -10,6 +10,7 @@ const app = express()
 
 // Global middleware
 app.use(express.urlencoded({extended: true}))
+app.use(express.static('public'))
 
 // View engine Setting
 app.engine('hbs', exphbs.engine({defaultLayout: 'main', extname: 'hbs'}))
