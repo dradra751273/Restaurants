@@ -2,8 +2,9 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 
 // Customized setting
+require('./config/mongoose')
 const restRouter = require('./routes/restRoutes')
-const port = 3000
+const port = process.env.PORT || 3000
 
 // Initialize app
 const app = express()
