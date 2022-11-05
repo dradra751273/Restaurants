@@ -24,7 +24,7 @@ function filterByCategory(rest, keyword) {
 }
 
 exports.searchRestaurants = async (req, res) => {
-  const keyword = req.query['keyword']
+  const keyword = req.query['keyword'].trim()
   const restaurants = await REST.find().lean()
   const searchedRests = restaurants.filter(rest => {
     return filterByName(rest, keyword) || filterByCategory(rest, keyword)
