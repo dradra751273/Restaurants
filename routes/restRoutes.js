@@ -9,4 +9,7 @@ router.route('/')
 router.route('/restaurants/info/:id')
   .get(restController.getRestaurant)
 
+router.route('/restaurants/search')
+  .get(restController.searchRestaurants)
+
 module.exports = router
