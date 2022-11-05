@@ -8,7 +8,7 @@ Build a favorite restaurant list website based on Node.js, Express, and MongoDB.
 
 # Steps
 1. Confirm Node.js installs in the computer.
-2. Clone to the folder, or execute the git coommand blow in the folder<br>
+2. Clone the files to the folder, or execute the git command below in the folder.<br>
 ```
 git clone https://github.com/dradra751273/restaurants.git
 ```
