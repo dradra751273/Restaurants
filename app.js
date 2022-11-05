@@ -1,8 +1,8 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 
-
 // Customized setting
+const restRouter = require('./routes/restRoutes')
 const port = 3000
 
 // Initialize app
@@ -15,6 +15,9 @@ app.use(express.static('public'))
 // View engine Setting
 app.engine('hbs', exphbs.engine({defaultLayout: 'main', extname: 'hbs'}))
 app.set('view engine', 'hbs')
+
+// Routes
+app.use('/', restRouter)
 
 // Server listening
 app.listen(port, () => {
