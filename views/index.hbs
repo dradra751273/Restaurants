@@ -36,31 +36,52 @@
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="row row-cols-sm-3">
+
         {{#each restaurants}}
-          <a href="/restaurants/info/{{this._id}}" class="text-secondary">
-            <div class="card mb-3">
-              <div class="img-container">
-                <img class="card-img-top" src="{{this.image}}"
-                     alt="{{this.name}}">
-              </div>
-              <div class="card-body p-3">
+          <div class="d-flex flex-column mb-3">
+            <a href="/restaurants/info/{{this._id}}" class="text-secondary text-decoration-none">
+              <div class="card">
 
-                <span class="badge badge-pill bg-danger font-weight-normal">
-                    {{this.rating}}
-                  <i class="fas fa-star fa-xs"></i>
-                </span>
+                <div class="img-container">
+                  <img class="card-img-top" src="{{this.image}}"
+                       alt="{{this.name}}">
+                </div>
 
-                <h6 class="card-title mb-1">{{this.name}}</h6>
+                <div class="card-body p-3">
 
-                <div class="restaurant-category mb-1">
-                  <i class="fas fa-utensils pr-2"></i>{{this.category}}
+                  <div class="d-flex mb-2">
+                    <span class="badge badge-pill bg-danger font-weight-normal">
+                      {{this.rating}}
+                      <i class="fas fa-star fa-xs"></i>
+                    </span>
+                    <div class="restaurant-category ms-1">
+                      <i class="fas fa-utensils pr-2"></i>{{this.category}}
+                    </div>
+                  </div>
+
+                  <h6 class="card-title mb-1">{{this.name}}</h6>
+
                 </div>
 
               </div>
+            </a>
+
+            <div class="button-group">
+              <a href="/restaurants/{{this._id}}/edit" class="btn btn-light">
+                <ion-icon name="information-outline" class="card-icon align-middle"></ion-icon>
+              </a>
+              <a href="/restaurants/{{this._id}}/edit" class="btn btn-success">
+                <ion-icon name="create-outline" class="card-icon align-middle"></ion-icon>
+              </a>
+              <a href="/restaurants/{{this._id}}/edit" class="btn btn-danger">
+                <ion-icon name="trash-outline" class="card-icon align-middle"></ion-icon>
+              </a>
             </div>
-          </a>
+          </div>
         {{/each}}
+
       </div>
     </div>
   </div>
+
 </div>

@@ -21,13 +21,12 @@ header {
 }
 
 .search-bar .search-bar-outer {
-  margin: 0 auto;
   max-width: 680px;
   background-color: #fce2cf;
   border-radius: 8px;
   padding: 20px 30px;
   border: 0;
-  margin-top: -60px;
+  margin: -60px auto 0;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -71,18 +70,35 @@ header {
 /*edit page*/
 .edit-container {
   margin: 5rem auto;
-  padding:2rem;
+  padding: 2rem;
   max-width: 60%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
   border-radius: 9px;
 }
 
-.edit-header{
+.edit-header {
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
   gap: 2rem;
 
+}
+
+.button-group {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+
+}
+
+.button-group a{
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.card-icon{
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {

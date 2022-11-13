@@ -32,6 +32,8 @@ exports.searchRestaurants = async (req, res) => {
 }
 
 
-exports.getRestaurantInfo = async (req, res)=>{
+exports.getRestaurantDetails = async (req, res) => {
+
+  console.log(req.params)
   res.render('edit')
 }
