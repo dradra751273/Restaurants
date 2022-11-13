@@ -92,11 +92,11 @@ header {
 
 }
 
-.button-group a{
+.button-group a:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
 }
 
-.card-icon{
+.card-icon {
   font-size: 1.4rem;
   font-weight: bold;
 }

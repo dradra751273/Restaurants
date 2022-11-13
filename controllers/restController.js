@@ -1,4 +1,5 @@
 const REST = require('./../models/restModel')
+const mongoose = require('mongoose')
 
 
 exports.getAllRestaurants = async (req, res) => {
@@ -33,7 +34,10 @@ exports.searchRestaurants = async (req, res) => {
 
 
 exports.getRestaurantDetails = async (req, res) => {
-
-  console.log(req.params)
-  res.render('edit')
+  if (mongoose.isValidObjectId(req.params['id'])) {
+    const restaurant = await REST.findById(req.params['id']).lean()
+    res.render('edit', {restaurant})
+  } else {
+    res.redirect('/')
+  }
 }

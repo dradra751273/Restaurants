@@ -38,7 +38,7 @@
       <div class="row row-cols-sm-3">
 
         {{#each restaurants}}
-          <div class="d-flex flex-column mb-3">
+          <div class="card-container d-flex flex-column mb-3">
             <a href="/restaurants/info/{{this._id}}" class="text-secondary text-decoration-none">
               <div class="card">
 
@@ -54,8 +54,8 @@
                       {{this.rating}}
                       <i class="fas fa-star fa-xs"></i>
                     </span>
-                    <div class="restaurant-category ms-1">
-                      <i class="fas fa-utensils pr-2"></i>{{this.category}}
+                    <div class="restaurant-category ms-3">
+                      <i class="fas fa-utensils pr-2"></i> &nbsp;{{this.category}}
                     </div>
                   </div>
 
@@ -67,7 +67,7 @@
             </a>
 
             <div class="button-group">
-              <a href="/restaurants/{{this._id}}/edit" class="btn btn-light">
+              <a href="/restaurants/info/{{this._id}}" class="btn btn-light">
                 <ion-icon name="information-outline" class="card-icon align-middle"></ion-icon>
               </a>
               <a href="/restaurants/{{this._id}}/edit" class="btn btn-success">
