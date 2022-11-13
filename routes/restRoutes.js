@@ -12,4 +12,7 @@ router.route('/restaurants/info/:id')
 router.route('/restaurants/search')
   .get(restController.searchRestaurants)
 
+router.route('/restaurants/edit')
+  .get(restController.getRestaurantInfo)
+
 module.exports = router

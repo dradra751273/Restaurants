@@ -1,5 +1,4 @@
 const REST = require('./../models/restModel')
-const mongoose = require('mongoose')
 
 
 exports.getAllRestaurants = async (req, res) => {
@@ -30,4 +29,9 @@ exports.searchRestaurants = async (req, res) => {
     return filterByName(rest, keyword) || filterByCategory(rest, keyword)
   })
   res.render('index', {restaurants: searchedRests})
+}
+
+
+exports.getRestaurantInfo = async (req, res)=>{
+  res.render('edit')
 }

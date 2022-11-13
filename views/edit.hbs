@@ -1,0 +1,80 @@
+<div class="edit-container bg-light">
+  <form action="/restaurants/{{restaurant._id}}/edit" method="post">
+    <div class="edit-header">
+      <a href="/" type="button" class="btn btn-outline-success"><i class="fa fa-home"></i></a>
+      <h2>Restaurant Details</h2>
+    </div>
+
+    <!--第1列=>餐廳一般名稱及英文名稱-->
+    <div class="row mb-3">
+      <div class="col-6">
+        <label for="name" class="form-label">NAME</label>
+        <input class="form-control" type="text" id="name" name="name"
+          {{#if restaurant}} value="{{restaurant.name}}" {{/if}} required/>
+      </div>
+      <div class="col-6">
+        <label for="name_en" class="form-label">ENGLISH NAME</label>
+        <input class="form-control" type="text" id="name_en" name="name_en"
+          {{#if restaurant}} value="{{restaurant.name_en}}" {{/if}}>
+      </div>
+    </div>
+    <!--第2列=>評分及類型-->
+    <div class="row mb-3">
+      <div class="col-6">
+        <label for="rating" class="form-label">RATING</label>
+        <input class="form-control" type="text" id="rating" name="rating"
+          {{#if restaurant}} value="{{restaurant.rating}}" {{/if}} required/>
+      </div>
+      <div class="col-6">
+        <label for="category" class="form-label">CATEGORY</label>
+        <input class="form-control" type="text" id="category" name="category"
+          {{#if restaurant}} value="{{restaurant.category}}" {{/if}}>
+      </div>
+    </div>
+    <!--第3列=>圖片資源-->
+    <div class="row mb-3">
+      <div class="col-12">
+        <label for="img" class="form-label">IMAGE SRC</label>
+        <input class="form-control" type="text" id="img" name="img"
+          {{#if restaurant}} value="{{restaurant.image}}" {{/if}} required/>
+      </div>
+    </div>
+    <!--第4列=>地點-->
+    <div class="row mb-3">
+      <div class="col-12">
+        <label for="location" class="form-label">LOCATION</label>
+        <input class="form-control" type="text" id="location" name="location"
+          {{#if restaurant}} value="{{restaurant.location}}" {{/if}} required/>
+      </div>
+    </div>
+    <!--第5列=>電話-->
+    <div class="row mb-3">
+      <div class="col-12">
+        <label for="phone" class="form-label">PHONE</label>
+        <input class="form-control" type="text" id="phone" name="phone"
+          {{#if restaurant}} value="{{restaurant.phone}}" {{/if}} required/>
+      </div>
+    </div>
+    <!--第6列=>GOOGLE MAP-->
+    <div class="row mb-3">
+      <div class="col-12">
+        <label for="google_map" class="form-label">GOOGLE MAP</label>
+        <input class="form-control" type="text" id="google_map" name="google_map"
+          {{#if restaurant}} value="{{restaurant.google_map}}" {{/if}} required/>
+      </div>
+    </div>
+    <!--第6列=>描述-->
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description">
+          {{~#if restaurant~}}{{restaurant.description}}{{~/if~}}
+        </textarea>
+      <label for="floatingTextarea">Comments</label>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-success">EDIT RESTAURANT DATA</button>
+      </div>
+    </div>
+  </form>
+</div>
