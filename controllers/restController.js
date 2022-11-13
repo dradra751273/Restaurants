@@ -41,3 +41,16 @@ exports.getRestaurantDetails = async (req, res) => {
     res.redirect('/')
   }
 }
+
+
+exports.editRestaurant = async (req, res) => {
+  if (mongoose.isValidObjectId(req.body.id)) {
+    console.log('here')
+    await REST.findByIdAndUpdate(
+      req.body.id, req.body, {new: true, runValidators: true}
+    )
+    res.redirect(`/restaurants/info/${req.body.id}`)
+  } else {
+    res.redirect('/')
+  }
+}

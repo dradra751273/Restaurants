@@ -14,5 +14,6 @@ router.route('/restaurants/search')
 
 router.route('/restaurants/:id/edit')
   .get(restController.getRestaurantDetails)
+  .post(restController.editRestaurant)
 
 module.exports = router

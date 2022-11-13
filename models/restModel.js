@@ -2,10 +2,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const restSchema = new Schema({
-  id: {
-    type: Number,
-    require: [true, 'A restaurant must have an id']
-  },
   name: {
     type: String,
     require: [true, 'A restaurant must have a name'],

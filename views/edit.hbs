@@ -4,7 +4,8 @@
       <a href="/" type="button" class="btn btn-outline-success"><i class="fa fa-home"></i></a>
       <h2>Restaurant Details</h2>
     </div>
-
+    <!--取得ID-->
+    <input type="text" name="id" {{#if restaurant}} value="{{restaurant._id}}" {{/if}} style="display:none">
     <!--第1列=>餐廳一般名稱及英文名稱-->
     <div class="row mb-3">
       <div class="col-6">
