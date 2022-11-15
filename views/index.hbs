@@ -36,19 +36,18 @@
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="row row-cols-sm-3">
-
+        <!--Card list-->
         {{#each restaurants}}
           <div class="card-container d-flex flex-column mb-3">
             <a href="/restaurants/info/{{this._id}}" class="text-secondary text-decoration-none">
               <div class="card">
-
+                <!--Card image-->
                 <div class="img-container">
                   <img class="card-img-top" src="{{this.image}}"
                        alt="{{this.name}}">
                 </div>
-
+                <!--Card body-->
                 <div class="card-body p-3">
-
                   <div class="d-flex mb-2">
                     <span class="badge badge-pill bg-danger font-weight-normal">
                       {{this.rating}}
@@ -58,13 +57,11 @@
                       <i class="fas fa-utensils pr-2"></i> &nbsp;{{this.category}}
                     </div>
                   </div>
-
                   <h6 class="card-title mb-1">{{this.name}}</h6>
-
                 </div>
               </div>
             </a>
-
+            <!--Button group below the card-->
             <div class="button-group">
               <a href="/restaurants/info/{{this._id}}" class="btn btn-light">
                 <ion-icon name="information-outline" class="card-icon align-middle"></ion-icon>
@@ -72,15 +69,15 @@
               <a href="/restaurants/{{this._id}}/edit" class="btn btn-success">
                 <ion-icon name="create-outline" class="card-icon align-middle"></ion-icon>
               </a>
-              <a href="/restaurants/{{this._id}}/edit" class="btn btn-danger">
+              <button class="btn btn-danger open-modal-btn">
                 <ion-icon name="trash-outline" class="card-icon align-middle"></ion-icon>
-              </a>
+              </button>
             </div>
           </div>
         {{/each}}
-
       </div>
     </div>
   </div>
-
 </div>
+
+
