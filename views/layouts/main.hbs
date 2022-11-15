@@ -34,16 +34,19 @@
   <h3>OK to delete restaurant？</h3>
   <div class="modal-buttons">
     <a href="/restaurants/delete" class="btn btn-danger delete-btn">ok</a>
-    <button class="btn btn-success c">close</button>
+    <button class="btn btn-success close-modal-btn">close</button>
   </div>
 </dialog>
 
 <script>
   const modal = document.querySelector('.delete-modal')
-  const openModal = document.querySelector('.open-modal-btn')
+  const openModals = document.querySelectorAll('.open-modal-btn')
   const closeModal = document.querySelector('.close-modal-btn')
-  openModal.addEventListener('click', () => {
-    modal.showModal()
+
+  openModals.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.showModal()
+    })
   })
   closeModal.addEventListener('click', () => {
     modal.close()

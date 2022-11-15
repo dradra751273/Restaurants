@@ -105,9 +105,6 @@ header {
 
 .delete-modal {
   padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border: none;
   border-radius: 9px;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);

@@ -54,3 +54,13 @@ exports.editRestaurant = async (req, res) => {
     res.redirect('/')
   }
 }
+
+
+exports.deleteRestaurant = async (req, res) => {
+  if (mongoose.isValidObjectId(req.params.id)) {
+    await REST.findByIdAndDelete(req.params.id)
+    res.redirect('/')
+  } else {
+    res.redirect('/')
+  }
+}

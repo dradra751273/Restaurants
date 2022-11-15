@@ -16,4 +16,7 @@ router.route('/restaurants/:id/edit')
   .get(restController.getRestaurantDetails)
   .post(restController.editRestaurant)
 
+router.route('/restaurants/:id/delete')
+  .get(restController.deleteRestaurant)
+
 module.exports = router
