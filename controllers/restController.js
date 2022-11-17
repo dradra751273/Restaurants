@@ -78,3 +78,22 @@ exports.addRestaurant = async (req, res) => {
     console.log(err)
   }
 }
+
+
+exports.sortRestaurants = async (req, res) => {
+
+  const sortWay = req.params['sortWay']
+
+  if (sortWay === 'normal') {
+    const restaurants = await REST.find().sort({'name_en': 'asc'}).lean()
+    res.render('index', {restaurants})
+  }
+  if (sortWay === 'reverse') {
+    const restaurants = await REST.find().sort({'name_en': 'desc'}).lean()
+    res.render('index', {restaurants})
+  }
+  if (sortWay === 'category') {
+    const restaurants = await REST.find().sort({'category': 1}).lean()
+    res.render('index', {restaurants})
+  }
+}

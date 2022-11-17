@@ -12,10 +12,10 @@ header {
 
 .custom-btn {
   width: 8rem;
-  height: 2.8rem;
+  height: 2.5rem;
   color: #fff;
   border-radius: 5px;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   font-size: 1rem;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
@@ -33,7 +33,7 @@ header {
 
 
 .add-btn {
-  line-height: 3rem;
+  line-height: 0.6rem;
   border: none;
   background: rgb(255, 27, 0);
   background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
@@ -102,6 +102,12 @@ header {
   font-size: 0.8rem;
 }
 
+.row .col-3 .form-select{
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .btn-major {
   background-color: #9b4b4b;
   color: white;
@@ -130,7 +136,7 @@ header {
 
 }
 
-.button-group a:hover {
+.button-group a:hover, .button-group button:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
 }
 

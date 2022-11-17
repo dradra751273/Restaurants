@@ -23,4 +23,7 @@ router.route('/restaurant/add')
   .get(restController.showAddRestForm)
   .post(restController.addRestaurant)
 
+router.route('/restaurants/sort/:sortWay')
+  .get(restController.sortRestaurants)
+
 module.exports = router
