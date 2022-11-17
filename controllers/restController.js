@@ -64,3 +64,17 @@ exports.deleteRestaurant = async (req, res) => {
     res.redirect('/')
   }
 }
+
+
+exports.showAddRestForm = async (req, res) => {
+  res.render('edit')
+}
+
+exports.addRestaurant = async (req, res) => {
+  try {
+    const doc = await REST.create(req.body)
+    res.redirect(`/restaurants/info/${doc['_id']}`)
+  } catch (err) {
+    console.log(err)
+  }
+}

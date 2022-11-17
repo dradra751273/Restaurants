@@ -10,6 +10,69 @@ header {
   color: #226089;
 }
 
+.custom-btn {
+  width: 8rem;
+  height: 2.8rem;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, .5),
+  7px 7px 20px 0 rgba(0, 0, 0, .1),
+  4px 4px 5px 0 rgba(0, 0, 0, .1);
+  outline: none;
+}
+
+
+.add-btn {
+  line-height: 3rem;
+  border: none;
+  background: rgb(255, 27, 0);
+  background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+}
+
+.add-btn:hover {
+  color: #f0094a;
+  background: transparent;
+  box-shadow: none;
+}
+
+.add-btn:before, .add-btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #f0094a;
+  box-shadow: -1px -1px 5px 0 #fff,
+  7px 7px 20px 0 #0003,
+  4px 4px 5px 0 #0002;
+  transition: 400ms ease all;
+}
+
+.add-btn:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.add-btn:hover:before,
+.add-btn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+
 .banner {
   position: relative;
   z-index: -1;
