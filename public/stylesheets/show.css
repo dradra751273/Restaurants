@@ -58,31 +58,6 @@ header {
   font-size: 0.8rem;
 }
 
-.restaurant-show-title {
-  position: relative;
-  top: -100px;
-  color: white;
-  text-align: center;
-  font-size: 3rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/*edit page*/
-.edit-container {
-  margin: 5rem auto;
-  padding: 2rem;
-  max-width: 60%;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-}
-
-.edit-header {
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-
-}
 
 .button-group {
   margin-top: 0.5rem;
@@ -102,15 +77,43 @@ header {
   pointer-events: none;
 }
 
+/*★show page★*/
+.restaurant-show-title {
+  position: relative;
+  top: -100px;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-.delete-modal {
+/*★edit page★*/
+.edit-container {
+  margin: 5rem auto;
+  padding: 2rem;
+  max-width: 60%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
+
+.edit-header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+/*★modal★*/
+
+.del-modal {
   padding: 1rem 2rem;
   border: none;
   border-radius: 9px;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
 
-.delete-modal h3 {
+.del-modal h3 {
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 600;
@@ -122,13 +125,13 @@ header {
   gap: 1rem;
 }
 
-.modal-buttons .delete-btn,
+.modal-buttons .del-btn,
 .modal-buttons .close-modal-btn {
   width: 6rem;
   font-weight: 600;
 }
 
-.delete-modal::backdrop {
+.del-modal::backdrop {
   background: rgb(0 0 0 / 0.4);
 }
 

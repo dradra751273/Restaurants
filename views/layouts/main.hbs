@@ -29,34 +29,20 @@
 
 {{{body}}}
 
-<!--Delete check modal-->
-<dialog class="delete-modal">
+<!--Delete modal-->
+<dialog class="del-modal">
   <h3>OK to delete restaurant？</h3>
   <div class="modal-buttons">
-    <a href="/restaurants/delete" class="btn btn-danger delete-btn">ok</a>
+    <button class="btn btn-danger del-btn">ok</button>
     <button class="btn btn-success close-modal-btn">close</button>
   </div>
 </dialog>
-
-<script>
-  const modal = document.querySelector('.delete-modal')
-  const openModals = document.querySelectorAll('.open-modal-btn')
-  const closeModal = document.querySelector('.close-modal-btn')
-
-  openModals.forEach(btn => {
-    btn.addEventListener('click', () => {
-      modal.showModal()
-    })
-  })
-  closeModal.addEventListener('click', () => {
-    modal.close()
-  })
-</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
+<script src="/modules/modal.js" type="module"></script>
 
 </body>
 </html>
