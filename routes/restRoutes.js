@@ -19,7 +19,7 @@ router.route('/restaurants/:id/edit')
 router.route('/restaurants/:id/delete')
   .get(restController.deleteRestaurant)
 
-router.route('/restaurant/add')
+router.route('/restaurants/add')
   .get(restController.showAddRestForm)
   .post(restController.addRestaurant)
 

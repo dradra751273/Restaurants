@@ -1,16 +1,15 @@
 const REST = require('./../models/restModel')
 const mongoose = require('mongoose')
 
+exports.getRestaurant = async (req, res) => {
+  const restaurant = await REST.findById(req.params['id']).lean()
+  res.render('show', {restaurant: restaurant})
+}
+
 
 exports.getAllRestaurants = async (req, res) => {
   const restaurants = await REST.find().lean()
   res.render('index', {restaurants})
-}
-
-
-exports.getRestaurant = async (req, res) => {
-  const restaurant = await REST.findById(req.params['id']).lean()
-  res.render('show', {restaurant: restaurant})
 }
 
 
@@ -33,6 +32,7 @@ exports.searchRestaurants = async (req, res) => {
 }
 
 
+// Bring restaurant info to the edit page
 exports.getRestaurantDetails = async (req, res) => {
   if (mongoose.isValidObjectId(req.params['id'])) {
     const restaurant = await REST.findById(req.params['id']).lean()
@@ -45,21 +45,10 @@ exports.getRestaurantDetails = async (req, res) => {
 
 exports.editRestaurant = async (req, res) => {
   if (mongoose.isValidObjectId(req.body.id)) {
-    console.log('here')
     await REST.findByIdAndUpdate(
       req.body.id, req.body, {new: true, runValidators: true}
     )
     res.redirect(`/restaurants/info/${req.body.id}`)
-  } else {
-    res.redirect('/')
-  }
-}
-
-
-exports.deleteRestaurant = async (req, res) => {
-  if (mongoose.isValidObjectId(req.params.id)) {
-    await REST.findByIdAndDelete(req.params.id)
-    res.redirect('/')
   } else {
     res.redirect('/')
   }
@@ -76,6 +65,16 @@ exports.addRestaurant = async (req, res) => {
     res.redirect(`/restaurants/info/${doc['_id']}`)
   } catch (err) {
     console.log(err)
+  }
+}
+
+
+exports.deleteRestaurant = async (req, res) => {
+  if (mongoose.isValidObjectId(req.params.id)) {
+    await REST.findByIdAndDelete(req.params.id)
+    res.redirect('/')
+  } else {
+    res.redirect('/')
   }
 }
 

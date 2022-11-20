@@ -1,7 +1,12 @@
 <div class="edit-container bg-light">
   <form
-    action="{{#if
-      restaurant}}/restaurants/{{restaurant._id}}/edit{{else}}/restaurant/add{{/if}}"
+    action="
+      {{#if restaurant}}
+        /restaurants/{{restaurant._id}}/edit
+      {{else}}
+        /restaurants/add
+      {{/if}}
+      "
     method="post"
   >
     <div class="edit-header">
