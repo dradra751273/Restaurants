@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars')
 // Customized setting
 require('./config/mongoose')
 const restRouter = require('./routes/restRoutes')
+const errController = require('./controllers/errController')
 const port = process.env.PORT || 3000
 
 // Initialize app
@@ -19,6 +20,7 @@ app.set('view engine', 'hbs')
 
 // Routes
 app.use('/', restRouter)
+app.use(errController.globalErrHandler)
 
 // Server listening
 app.listen(port, () => {

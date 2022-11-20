@@ -1,16 +1,18 @@
-const REST = require('./../models/restModel')
 const mongoose = require('mongoose')
+const REST = require('./../models/restModel')
+const catchAsync = require('../utils/catchAsync')
 
-exports.getRestaurant = async (req, res) => {
+// 1) Read
+exports.getRestaurant = catchAsync(async (req, res) => {
   const restaurant = await REST.findById(req.params['id']).lean()
   res.render('show', {restaurant: restaurant})
-}
+})
 
 
-exports.getAllRestaurants = async (req, res) => {
+exports.getAllRestaurants = catchAsync(async (req, res) => {
   const restaurants = await REST.find().lean()
   res.render('index', {restaurants})
-}
+})
 
 
 function filterByName(rest, keyword) {
@@ -22,28 +24,28 @@ function filterByCategory(rest, keyword) {
   return rest['category'].includes(keyword)
 }
 
-exports.searchRestaurants = async (req, res) => {
+exports.searchRestaurants = catchAsync(async (req, res) => {
   const keyword = req.query['keyword'].trim()
   const restaurants = await REST.find().lean()
   const searchedRests = restaurants.filter(rest => {
     return filterByName(rest, keyword) || filterByCategory(rest, keyword)
   })
   res.render('index', {restaurants: searchedRests})
-}
+})
 
-
+// 2) Update
 // Bring restaurant info to the edit page
-exports.getRestaurantDetails = async (req, res) => {
+exports.getRestaurantDetails = catchAsync(async (req, res) => {
   if (mongoose.isValidObjectId(req.params['id'])) {
     const restaurant = await REST.findById(req.params['id']).lean()
     res.render('edit', {restaurant})
   } else {
     res.redirect('/')
   }
-}
+})
 
 
-exports.editRestaurant = async (req, res) => {
+exports.editRestaurant = catchAsync(async (req, res) => {
   if (mongoose.isValidObjectId(req.body.id)) {
     await REST.findByIdAndUpdate(
       req.body.id, req.body, {new: true, runValidators: true}
@@ -52,34 +54,35 @@ exports.editRestaurant = async (req, res) => {
   } else {
     res.redirect('/')
   }
-}
+})
 
 
-exports.showAddRestForm = async (req, res) => {
+// 3) Create
+exports.showAddRestForm = catchAsync(async (req, res) => {
   res.render('edit')
-}
+})
 
-exports.addRestaurant = async (req, res) => {
+exports.addRestaurant = catchAsync(async (req, res) => {
   try {
     const doc = await REST.create(req.body)
     res.redirect(`/restaurants/info/${doc['_id']}`)
   } catch (err) {
     console.log(err)
   }
-}
+})
 
-
-exports.deleteRestaurant = async (req, res) => {
+// 4) Delete
+exports.deleteRestaurant = catchAsync(async (req, res) => {
   if (mongoose.isValidObjectId(req.params.id)) {
     await REST.findByIdAndDelete(req.params.id)
     res.redirect('/')
   } else {
     res.redirect('/')
   }
-}
+})
 
 
-exports.sortRestaurants = async (req, res) => {
+exports.sortRestaurants = catchAsync(async (req, res) => {
 
   const sortWay = req.params['sortWay']
 
@@ -95,4 +98,4 @@ exports.sortRestaurants = async (req, res) => {
     const restaurants = await REST.find().sort({'category': 1}).lean()
     res.render('index', {restaurants})
   }
-}
+})
