@@ -1,16 +1,19 @@
 <div class="edit-container bg-light">
   <form
-    action="{{#if restaurant}}/restaurants/{{restaurant._id}}/edit{{else}}/restaurant/add{{/if}}"
+    action="{{#if
+      restaurant}}/restaurants/{{restaurant._id}}/edit{{else}}/restaurant/add{{/if}}"
     method="post"
   >
     <div class="edit-header">
-      <a href="/" type="button" class="btn btn-outline-success"><i class="fa fa-home"></i></a>
+      <a href="/" type="button" class="btn btn-outline-success"><i
+        class="fa fa-home"></i></a>
       <h2>
         {{#if restaurant}}Restaurant Details{{else}} Add a New Restaurant{{/if}}
       </h2>
     </div>
     <!--取得ID-->
-    <input type="text" name="id" {{#if restaurant}} value="{{restaurant._id}}" {{/if}} style="display:none">
+    <input type="text" name="id" {{#if restaurant}}
+           value="{{restaurant._id}}" {{/if}} style="display:none">
     <!--第1列=>餐廳一般名稱及英文名稱-->
     <div class="row mb-3">
       <div class="col-6">
@@ -21,7 +24,7 @@
       <div class="col-6">
         <label for="name_en" class="form-label">ENGLISH NAME</label>
         <input class="form-control" type="text" id="name_en" name="name_en"
-          {{#if restaurant}} value="{{restaurant.name_en}}" {{/if}}>
+          {{#if restaurant}} value="{{restaurant.name_en}}" {{/if}} required>
       </div>
     </div>
     <!--第2列=>評分及類型-->
@@ -34,7 +37,7 @@
       <div class="col-6">
         <label for="category" class="form-label">CATEGORY</label>
         <input class="form-control" type="text" id="category" name="category"
-          {{#if restaurant}} value="{{restaurant.category}}" {{/if}}>
+          {{#if restaurant}} value="{{restaurant.category}}" {{/if}} required>
       </div>
     </div>
     <!--第3列=>圖片資源-->
@@ -65,13 +68,15 @@
     <div class="row mb-3">
       <div class="col-12">
         <label for="google_map" class="form-label">GOOGLE MAP</label>
-        <input class="form-control" type="text" id="google_map" name="google_map"
-          {{#if restaurant}} value="{{restaurant.google_map}}" {{/if}} required/>
+        <input class="form-control" type="text" id="google_map"
+               name="google_map"
+          {{#if restaurant}} value="{{restaurant.google_map}}" {{/if}}/>
       </div>
     </div>
     <!--第6列=>描述-->
     <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description">
+        <textarea class="form-control" placeholder="Leave a comment here"
+                  id="floatingTextarea" name="description">
           {{~#if restaurant~}}{{restaurant.description}}{{~/if~}}
         </textarea>
       <label for="floatingTextarea">Comments</label>
@@ -80,7 +85,8 @@
     <div class="row mt-3">
       <div class="col-12 text-center">
         <button type="submit" class="btn btn-success">
-          {{#if restaurant}}EDIT RESTAURANT DATA{{else}}CREATE RESTAURANT DATA{{/if}}
+          {{#if restaurant}}
+            EDIT RESTAURANT DATA{{else}}CREATE RESTAURANT DATA{{/if}}
         </button>
       </div>
     </div>
